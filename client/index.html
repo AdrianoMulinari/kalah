@@ -1,0 +1,13 @@
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.min.js"></script>
+<script src="angular.min.js"></script>
+<script src="controller.js"></script>
+<div ng-app="KalahApp" ng-controller="KalahController">
+
+<h1> Player {{content.player}}</h1>
+
+<span ng-repeat="row in matrix track by $index" ng-init="rowIndex = $index"><br>
+  <span ng-repeat="element in row track by $index">
+    <button ng-disabled="readOnly($index, row, rowIndex)" rows="1" cols="1" ng-click="move($index)">{{element}}</button>
+  </span>
+</span>
+</div>
